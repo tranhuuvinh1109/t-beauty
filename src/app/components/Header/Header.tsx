@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <header className="shadow-bottom font-[family-name:var(--font-geist-mono)] sticky top-0 z-[1000] bg-white">
-      <nav className=" border-gray-200 dark:bg-gray-900">
+      <nav className=" border-gray-200 bg-white ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3 md:p-4 ">
           <div className=" relative w-[52px] h-[52px]">
             <Image src="/Logo.png" fill={true} alt={"Logo"} />
