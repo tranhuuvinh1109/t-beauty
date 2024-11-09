@@ -6,7 +6,7 @@ import Container from "../Container/Container";
 
 const Award = () => {
   return (
-    <div className="relative min-h-[600px] md:min-h-[500px] mt-10">
+    <div className="relative min-h-[640px] md:min-h-[500px] mt-10">
       <Image
         src="/images/background.webp"
         alt="background"
@@ -24,7 +24,7 @@ const Award = () => {
       <div className="z-10 absolute top-0 bottom-0 left-0 right-0 flex items-center">
         <Container className="md:grid md:grid-cols-2 md:gap-4 flex flex-col gap-6">
           <div className="col-span-1 flex gap-4 items-center">
-            <div className="w-fit bg-gold-hover max-w-[300px] rounded-xl py-4 text-center border border-gold">
+            <div className="w-fit bg-gold-hover max-w-[300px] h-[220px] md:h-fit rounded-xl py-4 text-center border border-gold">
               <div className="pb-6 border-b border-fill flex md:flex-col gap-2 justify-center items-center">
                 <div className="p-2 rounded-full hidden md:block border-2 text-gold border-gold w-fit mx-0 md:mx-auto h-fit">
                   <IoMdCall fontSize={40} />
@@ -45,7 +45,7 @@ const Award = () => {
                 Ready to serve and answer all customer inquiries 24/7.
               </h2>
             </div>
-            <div className="w-fit bg-gold-hover max-w-[300px] rounded-xl py-4 text-center border border-gold">
+            <div className="w-fit bg-gold-hover max-w-[300px] h-[220px] md:h-fit rounded-xl py-4 text-center border border-gold">
               <div className="pb-6 border-b border-fill flex md:flex-col gap-2 justify-center items-center">
                 <div className="p-2 rounded-full hidden md:block border-2 text-gold border-gold w-fit mx-0 md:mx-auto h-fit">
                   <FaCalendarAlt fontSize={40} />
