@@ -214,3 +214,26 @@ export const SOCIAL_MEDIA: SocialMediaItemType[] = [
     link: "",
   },
 ];
+
+export const IMAGES: SliderItemType[] = [
+  {
+    href: "/images/Mobile.jpg",
+    name: "Mobile",
+  },
+  {
+    href: "/images/Mobile.jpg",
+    name: "Mobile",
+  },
+  {
+    href: "/images/Mobile.jpg",
+    name: "Mobile",
+  },
+  {
+    href: "/images/Mobile.jpg",
+    name: "Mobile",
+  },
+  {
+    href: "/images/Mobile.jpg",
+    name: "Mobile",
+  },
+];
