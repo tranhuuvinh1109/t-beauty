@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-import { Edu_AU_VIC_WA_NT_Hand, Barlow } from "next/font/google";
+import { Dancing_Script, Barlow } from "next/font/google";
 
 const Bar = Barlow({
   weight: ["400", "500", "600", "700"],
@@ -10,10 +10,10 @@ const Bar = Barlow({
   variable: "--font-bar",
 });
 
-const Edu = Edu_AU_VIC_WA_NT_Hand({
+const Dancing = Dancing_Script({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-edu",
+  variable: "--font-dancing",
 });
 
 const geistSans = localFont({
@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${Edu.variable} ${Bar.variable} antialiased text-text-black bg-white relative`}
+        className={`${geistSans.variable} ${geistMono.variable} ${Dancing.variable} ${Bar.variable} antialiased text-text-black bg-white relative`}
       >
         {children}
       </body>
