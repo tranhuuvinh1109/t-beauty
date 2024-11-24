@@ -1,5 +1,6 @@
 import {
   Award,
+  Book,
   Certificate,
   InfiniteScroll,
   Service,
@@ -13,6 +14,7 @@ export default function Home() {
       <Service />
       <Certificate />
       <Award />
+      <Book />
       <InfiniteScroll />
     </div>
   );

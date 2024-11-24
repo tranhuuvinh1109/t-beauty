@@ -7,6 +7,7 @@ import { default as Animation } from "./Animation/Animation";
 import { default as Service } from "./Service/Service";
 import { default as Award } from "./Award/Award";
 import { default as InfiniteScroll } from "./InfiniteScroll/InfiniteScroll";
+import { default as Book } from "./Book/Book";
 
 export {
   Container,
@@ -18,4 +19,5 @@ export {
   Service,
   Award,
   InfiniteScroll,
+  Book,
 };

@@ -191,7 +191,7 @@ export const CERTIFICATES: CertificateItemType[] = [
 export const SOCIAL_MEDIA: SocialMediaItemType[] = [
   {
     icon: SvgFacebook,
-    link: "",
+    link: "https://www.facebook.com/media/set/?vanity=munsocola.super&set=a.3093229067479357",
   },
   {
     icon: SvgZalo,
