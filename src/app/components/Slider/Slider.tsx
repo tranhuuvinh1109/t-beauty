@@ -10,7 +10,7 @@ const SliderContainer = () => {
     <div className="">
       <Carousel
         autoPlay
-        interval={2000}
+        interval={3000}
         axis="horizontal"
         showIndicators={false}
         showThumbs={false}

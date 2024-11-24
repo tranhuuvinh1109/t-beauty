@@ -1,4 +1,5 @@
 import { SVGProps } from "react";
+import { IconType } from "react-icons";
 
 export type SubMenuItemType = {
   href: string;
@@ -31,4 +32,10 @@ export type CertificateItemType = {
 export type SocialMediaItemType = {
   icon: React.ComponentType<SVGProps<SVGSVGElement>>;
   link: string;
+};
+
+export type SidebarItemType = {
+  pathname: string;
+  label: string;
+  icon: IconType;
 };

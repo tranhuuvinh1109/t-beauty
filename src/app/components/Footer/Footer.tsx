@@ -22,7 +22,7 @@ const Footer = () => {
                 }}
               />
             </div>
-            <h1 className="text-2xl  font-semibold text-gold">
+            <h1 className="text-2xl  font-semibold text-gold font-[family-name:var(--font-edu)] ">
               T Beauty Center
             </h1>
           </div>

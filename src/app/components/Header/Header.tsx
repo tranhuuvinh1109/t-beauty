@@ -25,8 +25,13 @@ const Header = () => {
     <header className="shadow-bottom font-[family-name:var(--font-geist-mono)] sticky top-0 z-[1000] bg-white">
       <nav className=" border-gray-200 bg-white ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3 md:p-4 ">
-          <div className=" relative w-[52px] h-[52px]">
-            <Image src="/Logo.png" fill={true} alt={"Logo"} />
+          <div className="flex gap-2 items-center">
+            <Link href={"/"} className=" relative w-[52px] h-[52px]">
+              <Image src="/Logo.png" fill={true} alt={"Logo"} />
+            </Link>
+            <h1 className=" text-xl font-semibold text-gold font-[family-name:var(--font-edu)] ">
+              T Beauty Center
+            </h1>
           </div>
           <div className="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
             <button
@@ -49,8 +54,9 @@ const Header = () => {
                 return (
                   <li key={index}>
                     <Menu>
-                      <MenuButton className="z-[1000] font-semibold px-2.5 py-0.5 flex items-center rounded-md  hover:text-text-primary">
-                        {nav.label} <RiArrowDropDownLine fontSize={18} />
+                      <MenuButton className="z-[1000] font-semibold px-2.5 py-0.5 flex items-center rounded-md  hover:text-text-primary font-[family-name:var(--font-edu)]">
+                        {nav.label}{" "}
+                        {nav.submenu && <RiArrowDropDownLine fontSize={18} />}
                       </MenuButton>
                       <MenuItems
                         anchor="bottom"
@@ -106,7 +112,11 @@ const Header = () => {
                     </span>
                     <RiArrowDropDownLine className=" group-data-[hover]:fill-white/50 group-data-[open]:rotate-180" />
                   </DisclosureButton>
-                  <DisclosurePanel className="mt-6 text-sm/5 text-text-primary">
+                  <DisclosurePanel
+                    className={`mt-6 text-sm/5 text-text-primary ${
+                      menu.submenu ? "" : "hidden"
+                    }`}
+                  >
                     <ul className="flex flex-col gap-4">
                       {menu.submenu?.map((child, childIndex) => {
                         return (

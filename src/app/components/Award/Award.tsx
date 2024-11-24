@@ -37,7 +37,7 @@ const Award = () => {
                     HOTLINE
                   </h2>
                   <h1 className="text-base md:text-2xl font-semibold text-gold">
-                    1900 1900
+                    408 646 6147
                   </h1>
                 </div>
               </div>
