@@ -38,15 +38,17 @@ const Footer = () => {
           <div className="flex flex-col gap-3 px-2 mt-6">
             <div className="flex items-center gap-3">
               <FaPhoneAlt fontSize={18} fill={COLOR.gold} />
-              <h6 className=" font-semibold">+84 999 999 999</h6>
+              <h6 className=" font-semibold">408 646 6147</h6>
             </div>
             <div className="flex items-center gap-3">
               <FaLocationDot fontSize={18} fill={COLOR.gold} />
-              <h6 className=" font-semibold">America</h6>
+              <h6 className=" font-semibold">
+                2114 Senter Rd Ste 12 San Jose, CA 95112
+              </h6>
             </div>
             <div className="flex items-center gap-3">
               <IoMdMail fontSize={18} fill={COLOR.gold} />
-              <h6 className=" font-semibold">tbeautycenter@gmail.com</h6>
+              <h6 className=" font-semibold">tbeautycenterskin@gmail.com</h6>
             </div>
           </div>
         </div>
@@ -59,7 +61,14 @@ const Footer = () => {
               const Icon = media.icon;
               return (
                 <div key={index}>
-                  <a href={media.link}>
+                  <a
+                    href={media.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${
+                      media.link === "" ? "pointer-events-none" : ""
+                    }`}
+                  >
                     <Icon />
                   </a>
                 </div>

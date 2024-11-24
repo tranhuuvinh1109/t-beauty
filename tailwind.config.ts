@@ -24,6 +24,16 @@ const config: Config = {
       boxShadow: {
         full: "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
         bottom: "rgba(0, 0, 0, 0.15) 0px 4px 12px 0px",
+        effect: "0 0 10px 10px #ffdea7",
+      },
+      keyframes: {
+        effect: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.1)" },
+        },
+      },
+      animation: {
+        effect: "effect 1s linear infinite",
       },
     },
   },
