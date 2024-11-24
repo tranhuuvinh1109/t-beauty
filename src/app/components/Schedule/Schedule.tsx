@@ -39,7 +39,7 @@ const Schedule = () => {
     }
     const e = args.e;
     e.data.text = modal.result;
-    calendar.events.update(e);
+    // calendar.events.update(e);
   };
 
   return (

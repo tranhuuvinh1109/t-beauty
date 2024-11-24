@@ -29,7 +29,7 @@ const Header = () => {
             <Link href={"/"} className=" relative w-[52px] h-[52px]">
               <Image src="/Logo.png" fill={true} alt={"Logo"} />
             </Link>
-            <h1 className=" text-xl font-semibold text-gold font-[family-name:var(--font-edu)] ">
+            <h1 className=" text-xl font-semibold text-gold font-[family-name:var(--font-dancing)] ">
               T Beauty Center
             </h1>
           </div>
@@ -54,7 +54,7 @@ const Header = () => {
                 return (
                   <li key={index}>
                     <Menu>
-                      <MenuButton className="z-[1000] font-semibold px-2.5 py-0.5 flex items-center rounded-md  hover:text-text-primary font-[family-name:var(--font-edu)]">
+                      <MenuButton className="z-[1000] font-semibold px-2.5 py-0.5 flex items-center rounded-md  hover:text-text-primary font-[family-name:var(--font-dancing)]">
                         {nav.label}{" "}
                         {nav.submenu && <RiArrowDropDownLine fontSize={18} />}
                       </MenuButton>

@@ -14,7 +14,7 @@ const Sidebar = () => {
           <Link href={"/"} className=" relative inline-block w-[52px] h-[52px]">
             <Image src="/Logo.png" fill={true} alt={"Logo"} />
           </Link>
-          <h1 className=" text-xl font-semibold text-gold font-[family-name:var(--font-edu)] ">
+          <h1 className=" text-xl font-semibold text-gold font-[family-name:var(--font-dancing)] ">
             T Beauty Center
           </h1>
         </div>
