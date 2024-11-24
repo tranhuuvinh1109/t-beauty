@@ -1,12 +1,9 @@
-import { Container } from "../components";
-import GoogleCalendar from "../components/Schedule/Schedule";
+import { Schedule } from "../components";
 
 const Admin = () => {
   return (
     <div>
-      <Container>
-        <GoogleCalendar />
-      </Container>
+      <Schedule />
     </div>
   );
 };

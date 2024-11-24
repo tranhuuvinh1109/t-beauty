@@ -8,6 +8,9 @@ import { default as Service } from "./Service/Service";
 import { default as Award } from "./Award/Award";
 import { default as InfiniteScroll } from "./InfiniteScroll/InfiniteScroll";
 import { default as Book } from "./Book/Book";
+import { default as Sidebar } from "./Sidebar/Sidebar";
+import { default as Schedule } from "./Schedule/Schedule";
+import { default as HeaderAdmin } from "./HeaderAdmin/HeaderAdmin";
 
 export {
   Container,
@@ -20,4 +23,7 @@ export {
   Award,
   InfiniteScroll,
   Book,
+  Sidebar,
+  HeaderAdmin,
+  Schedule,
 };

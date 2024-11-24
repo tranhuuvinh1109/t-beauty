@@ -10,10 +10,17 @@ import SvgTiktok from "../assets/svg/SvgTiktok";
 import SvgTime from "../assets/svg/SvgTime";
 import SvgYoutube from "../assets/svg/SvgYoutube";
 import SvgZalo from "../assets/svg/SvgZalo";
+import { IoSettingsOutline } from "react-icons/io5";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { VscAccount } from "react-icons/vsc";
+import { PiInvoiceDuotone } from "react-icons/pi";
+import { AiOutlineSchedule } from "react-icons/ai";
+
 import {
   CertificateItemType,
   NavItemType,
   ServiceItemType,
+  SidebarItemType,
   SliderItemType,
   SocialMediaItemType,
 } from "../type/common";
@@ -22,74 +29,18 @@ export const MENU_HEADER: NavItemType[] = [
   {
     href: "",
     label: "Introduction",
-    submenu: [
-      {
-        href: "admin",
-        label: "Medical Team",
-      },
-      {
-        href: "",
-        label: "Facilities",
-      },
-      {
-        href: "",
-        label: " Chain of Facilities",
-      },
-    ],
   },
   {
     href: "",
     label: "Cosmetic Services",
-    submenu: [
-      {
-        href: "",
-        label: "Medical Team",
-      },
-      {
-        href: "",
-        label: "Facilities",
-      },
-      {
-        href: "",
-        label: " Chain of Facilities",
-      },
-    ],
   },
   {
     href: "",
     label: "Beauty Knowledge",
-    submenu: [
-      {
-        href: "",
-        label: "Medical Team",
-      },
-      {
-        href: "",
-        label: "Facilities",
-      },
-      {
-        href: "",
-        label: " Chain of Facilities",
-      },
-    ],
   },
   {
     href: "",
     label: "News & Events",
-    submenu: [
-      {
-        href: "",
-        label: "Medical Team",
-      },
-      {
-        href: "",
-        label: "Facilities",
-      },
-      {
-        href: "",
-        label: " Chain of Facilities",
-      },
-    ],
   },
 ];
 
@@ -217,23 +168,91 @@ export const SOCIAL_MEDIA: SocialMediaItemType[] = [
 
 export const IMAGES: SliderItemType[] = [
   {
-    href: "/images/Mobile.jpg",
-    name: "Mobile",
+    href: "/images/service1.jpg",
+    name: "service1",
   },
   {
-    href: "/images/Mobile.jpg",
-    name: "Mobile",
+    href: "/images/ad1.jpg",
+    name: "ad1",
   },
   {
-    href: "/images/Mobile.jpg",
-    name: "Mobile",
+    href: "/images/ad2.jpg",
+    name: "ad2",
   },
   {
-    href: "/images/Mobile.jpg",
-    name: "Mobile",
+    href: "/images/ad3.jpg",
+    name: "ad2",
   },
   {
-    href: "/images/Mobile.jpg",
-    name: "Mobile",
+    href: "/images/ad4.jpg",
+    name: "ad4",
+  },
+  {
+    href: "/images/service2.jpg",
+    name: "service2",
+  },
+  {
+    href: "/images/ad5.jpg",
+    name: "ad5",
+  },
+  {
+    href: "/images/ad6.jpg",
+    name: "ad6",
+  },
+  {
+    href: "/images/ad7.jpg",
+    name: "ad7",
+  },
+  {
+    href: "/images/ad8.jpg",
+    name: "ad8",
+  },
+  {
+    href: "/images/ad9.jpg",
+    name: "ad9",
+  },
+  {
+    href: "/images/ad10.jpg",
+    name: "ad10",
+  },
+  {
+    href: "/images/ad11.jpg",
+    name: "ad11",
+  },
+  {
+    href: "/images/ad12.jpg",
+    name: "ad12",
+  },
+  {
+    href: "/images/ad13.jpg",
+    name: "ad13",
+  },
+];
+
+export const SIDE_BAR: SidebarItemType[] = [
+  {
+    label: "Dashboard",
+    pathname: "/admin",
+    icon: LuLayoutDashboard,
+  },
+  {
+    label: "Schedule",
+    pathname: "/admin/schedule",
+    icon: AiOutlineSchedule,
+  },
+  {
+    label: "Invoices",
+    pathname: "/admin/invoice",
+    icon: PiInvoiceDuotone,
+  },
+  {
+    label: "Guests",
+    pathname: "/admin/guest",
+    icon: VscAccount,
+  },
+  {
+    label: "Setting",
+    pathname: "#",
+    icon: IoSettingsOutline,
   },
 ];

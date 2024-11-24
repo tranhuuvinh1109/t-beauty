@@ -2,6 +2,8 @@ import {
   Award,
   Book,
   Certificate,
+  Footer,
+  Header,
   InfiniteScroll,
   Service,
   Slider,
@@ -9,13 +11,17 @@ import {
 
 export default function Home() {
   return (
-    <div className=" font-[family-name:var(--font-geist-mono)]">
-      <Slider />
-      <Service />
-      <Certificate />
-      <Award />
-      <Book />
-      <InfiniteScroll />
-    </div>
+    <>
+      <Header />
+      <div className=" font-[family-name:var(--font-bar)]">
+        <Slider />
+        <Service />
+        <Certificate />
+        <Award />
+        <Book />
+        <InfiniteScroll />
+      </div>
+      <Footer />
+    </>
   );
 }
