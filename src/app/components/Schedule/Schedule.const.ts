@@ -1,70 +1,59 @@
+const svgAppoiment = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.5219 3.60957H0.478073V22.3028H23.5219V3.60957Z" fill="#EDEDED"/>
+<path d="M21.1315 6.08606H2.86852V19.8741H21.1315V6.08606Z" fill="#FFBC52"/>
+<path d="M10.1833 9.44221H6.5498V12.9801H10.1833V9.44221Z" fill="#D1392A"/>
+<path d="M23.5219 3.13148H22.5897V1.6972C22.5897 1.43316 22.3756 1.21912 22.1116 1.21912C21.8475 1.21912 21.6335 1.43316 21.6335 1.6972V3.13148H17.5339V1.6972C17.5339 1.43316 17.3199 1.21912 17.0558 1.21912C16.7918 1.21912 16.5778 1.43316 16.5778 1.6972V3.13148H12.4782V1.6972C12.4782 1.43316 12.2641 1.21912 12.0001 1.21912C11.736 1.21912 11.522 1.43316 11.522 1.6972V3.13148H7.42242V1.6972C7.42242 1.43316 7.20839 1.21912 6.94434 1.21912C6.6803 1.21912 6.46627 1.43316 6.46627 1.6972V3.13148H0.478078C0.214031 3.13148 0 3.34551 0 3.60956V22.3028C0 22.5668 0.214031 22.7809 0.478078 22.7809H23.5219C23.786 22.7809 24 22.5668 24 22.3028V3.60956C24 3.34551 23.786 3.13148 23.5219 3.13148ZM23.0438 21.8247H0.956156V4.08764H23.0438L23.0438 21.8247Z" fill="black"/>
+<path d="M1.88845 2.55778C2.15249 2.55778 2.36653 2.34375 2.36653 2.0797V1.69725C2.36653 1.4332 2.15249 1.21917 1.88845 1.21917C1.6244 1.21917 1.41037 1.4332 1.41037 1.69725V2.0797C1.41037 2.34375 1.6244 2.55778 1.88845 2.55778Z" fill="black"/>
+<path d="M21.6096 6.08616C21.6096 5.82211 21.3955 5.60808 21.1315 5.60808H2.86852C2.60447 5.60808 2.39044 5.82211 2.39044 6.08616V19.874C2.39044 20.1381 2.60447 20.3521 2.86852 20.3521H21.1315C21.3955 20.3521 21.6096 20.1381 21.6096 19.874V6.08616ZM3.3466 13.4655H6.04177V16.0285H3.3466V13.4655ZM6.99797 13.4655H9.70144V16.0285H6.99797V13.4655ZM10.6576 13.4655H13.3424V16.0285H10.6576V13.4655ZM14.2986 13.4655H16.9645V16.0285H14.2986V13.4655ZM17.9207 13.4655H20.6534V16.0285H17.9207V13.4655ZM20.6534 12.5093H17.9207V9.93886H20.6534V12.5093ZM16.9645 12.5093H14.2986V9.93886H16.9645V12.5093ZM13.3424 12.5093H10.6576V9.93886H13.3424V12.5093ZM9.70144 12.5093H6.99797V9.93886H9.70144V12.5093ZM6.04177 12.5093H3.3466V9.93886H6.04177V12.5093ZM3.3466 16.9847H6.04177V19.396H3.3466V16.9847ZM6.99797 16.9847H9.70144V19.396H6.99797V16.9847ZM10.6576 16.9847H13.3424V19.396H10.6576V16.9847ZM14.2986 16.9847H16.9645V19.396H14.2986V16.9847ZM20.6534 19.3959H17.9207V16.9847H20.6534V19.3959ZM20.6534 8.9827H17.9207V6.56423H20.6534V8.9827ZM16.9645 8.9827H14.2986V6.56423H16.9645V8.9827ZM13.3424 8.9827H10.6576V6.56423H13.3424V8.9827ZM9.70144 8.9827H6.99797V6.56423H9.70144V8.9827ZM3.3466 6.56423H6.04177V8.9827H3.3466V6.56423Z" fill="black"/>
+<path d="M15.251 5.33067H22.2789C22.5429 5.33067 22.757 5.11664 22.757 4.85259C22.757 4.58854 22.5429 4.37451 22.2789 4.37451H15.251C14.987 4.37451 14.7729 4.58854 14.7729 4.85259C14.7729 5.11664 14.987 5.33067 15.251 5.33067Z" fill="black"/>
+<path d="M12.4781 5.33067H13.1474C13.4115 5.33067 13.6255 5.11664 13.6255 4.85259C13.6255 4.58854 13.4115 4.37451 13.1474 4.37451H12.4781C12.214 4.37451 12 4.58854 12 4.85259C12 5.11664 12.214 5.33067 12.4781 5.33067Z" fill="black"/>
+<path d="M8.17528 11.1633H7.74502C7.48097 11.1633 7.26694 10.9493 7.26694 10.6852C7.26694 10.4212 7.48097 10.2072 7.74502 10.2072H8.17528C8.43933 10.2072 8.65336 10.4212 8.65336 10.6852C8.65341 10.9493 8.43933 11.1633 8.17528 11.1633Z" fill="black"/>
+</svg>
+`;
 export const EVENTS = [
   {
-    event_id: 1,
-    title: "Event 1",
-    start: new Date(new Date(new Date().setHours(9)).setMinutes(0)),
-    end: new Date(new Date(new Date().setHours(10)).setMinutes(0)),
-    disabled: true,
-    admin_id: [1, 2, 3, 4],
+    id: 1,
+    text: "Confirm an appoiment",
+    start: "2024-12-01T10:30:00",
+    end: "2024-12-01T13:00:00",
+    html: `<div style="height: -webkit-fill-available; color: #d57a7a;"><h1>${svgAppoiment}Confirm an appoiment</h1><p>Details for Event 1</p></div>`,
+    details: "Details for Event 1",
+    barColor: "#d57a7a",
   },
   {
-    event_id: 2,
-    title: "Event 2",
-    start: new Date(new Date(new Date().setHours(10)).setMinutes(0)),
-    end: new Date(new Date(new Date().setHours(12)).setMinutes(0)),
-    admin_id: 2,
-    color: "#50b500",
+    id: 2,
+    text: "Team Meeting",
+    start: "2024-12-02T09:00:00",
+    end: "2024-12-02T11:00:00",
+    html: `<div style="height: -webkit-fill-available; color: #6aa84f;"><h1>${svgAppoiment}Team Meeting</h1><p>Details for Event 2</p></div>`,
+    details: "Details for Event 2",
+    barColor: "#6aa84f",
   },
   {
-    event_id: 3,
-    title: "Event 3",
-    start: new Date(new Date(new Date().setHours(11)).setMinutes(0)),
-    end: new Date(new Date(new Date().setHours(12)).setMinutes(0)),
-    admin_id: 1,
-    editable: false,
-    deletable: false,
+    id: 3,
+    text: "Project Discussion",
+    start: "2024-12-03T14:00:00",
+    end: "2024-12-03T16:00:00",
+    html: `<div style="height: -webkit-fill-available; color: #83a3c1;"><h1>${svgAppoiment}Project Discussion</h1><p>Details for Event 3</p></div>`,
+    details: "Details for Event 3",
+    barColor: "#83a3c1",
   },
   {
-    event_id: 4,
-    title: "Event 4",
-    start: new Date(
-      new Date(new Date(new Date().setHours(9)).setMinutes(30)).setDate(
-        new Date().getDate() - 2
-      )
-    ),
-    end: new Date(
-      new Date(new Date(new Date().setHours(11)).setMinutes(0)).setDate(
-        new Date().getDate() - 2
-      )
-    ),
-    admin_id: 2,
-    color: "#900000",
+    id: 4,
+    text: "Workshop",
+    start: "2024-12-04T13:30:00",
+    end: "2024-12-04T15:30:00",
+    html: `<div style="height: -webkit-fill-available; color: #ffa726;"><h1>${svgAppoiment}Workshop</h1><p>Details for Event 4</p></div>`,
+    details: "Details for Event 4",
+    barColor: "#ffa726",
   },
   {
-    event_id: 5,
-    title: "Event 5",
-    start: new Date(
-      new Date(new Date(new Date().setHours(10)).setMinutes(30)).setDate(
-        new Date().getDate() - 2
-      )
-    ),
-    end: new Date(
-      new Date(new Date(new Date().setHours(14)).setMinutes(0)).setDate(
-        new Date().getDate() - 2
-      )
-    ),
-    admin_id: 2,
-    editable: true,
-  },
-  {
-    event_id: 6,
-    title: "Event 6",
-    start: new Date(
-      new Date(new Date(new Date().setHours(10)).setMinutes(30)).setDate(
-        new Date().getDate() - 4
-      )
-    ),
-    end: new Date(new Date(new Date().setHours(14)).setMinutes(0)),
-    admin_id: 2,
+    id: 5,
+    text: "Review Session",
+    start: "2024-12-05T08:30:00",
+    end: "2024-12-05T10:30:00",
+    html: `<div style="height: -webkit-fill-available; color: #ab47bc;"><h1>${svgAppoiment}Review Session</h1><p>Details for Event 5</p></div>`,
+    details: "Details for Event 5",
+    barColor: "#ab47bc",
   },
 ];

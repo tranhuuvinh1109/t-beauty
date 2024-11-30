@@ -1,56 +1,47 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { DayPilot, DayPilotCalendar } from "@daypilot/daypilot-lite-react";
+import Modal from "../Modal/Modal";
+import { EVENTS } from "./Schedule.const";
 
 const Schedule = () => {
-  const [calendar, setCalendar] = useState(null);
-  const [events, setEvents] = useState<DayPilot.EventData[]>([]);
+  // const [events, setEvents] = useState<DayPilot.EventData[]>(EVENTS);
 
-  useEffect(() => {
-    setEvents([
-      {
-        id: 1,
-        text: "Event 1",
-        start: "2024-09-07T10:30:00",
-        end: "2024-09-07T13:00:00",
-        html: "<p>aaaa</p>",
-      },
-      {
-        id: 2,
-        text: "Event 2",
-        start: "2024-09-08T09:30:00",
-        end: "2024-09-08T11:30:00",
-        barColor: "#6aa84f",
-      },
-    ]);
+  // const today = new Date();
+  // const todayString = today.toISOString().split("T")[0];
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [itemSelected, setItemSelected] = useState<
+    DayPilot.EventData & { details: string }
+  >();
+
+  const onEventClick = useCallback((args: DayPilot.CalendarEventClickArgs) => {
+    setIsOpen(true);
+    setItemSelected(args.e.data);
   }, []);
-
-  const onEventClick = async (args: DayPilot.CalendarEventClickArgs) => {
-    if (!calendar) return; // Ensure calendar is set
-
-    console.log("args", args);
-    const modal = await DayPilot.Modal.prompt(
-      "Update event text:",
-      args.e.text()
+  const renderCalendar = useMemo(() => {
+    return (
+      <DayPilotCalendar
+        viewType={"Week"}
+        startDate={"2024-12-01"}
+        timeRangeSelectedHandling={"Enabled"}
+        events={EVENTS}
+        onEventClick={onEventClick}
+      />
     );
-    if (!modal.result) {
-      return;
-    }
-    const e = args.e;
-    e.data.text = modal.result;
-    // calendar.events.update(e);
-  };
+  }, [onEventClick]);
 
   return (
-    <DayPilotCalendar
-      viewType={"Week"}
-      startDate={"2024-09-07"}
-      timeRangeSelectedHandling={"Enabled"}
-      events={events}
-      onEventClick={onEventClick}
-      controlRef={setCalendar}
-    />
+    <>
+      {renderCalendar}
+      <Modal isOpen={isOpen} handleClose={(value) => setIsOpen(value)}>
+        <div>
+          <h1>{itemSelected?.text}</h1>
+          <p>{itemSelected?.details}</p>
+        </div>
+      </Modal>
+    </>
   );
 };
 
