@@ -11,6 +11,7 @@ import { default as Book } from "./Book/Book";
 import { default as Sidebar } from "./Sidebar/Sidebar";
 import { default as Schedule } from "./Schedule/Schedule";
 import { default as HeaderAdmin } from "./HeaderAdmin/HeaderAdmin";
+import { default as Modal } from "./Modal/Modal";
 
 export {
   Container,
@@ -26,4 +27,5 @@ export {
   Sidebar,
   HeaderAdmin,
   Schedule,
+  Modal,
 };
