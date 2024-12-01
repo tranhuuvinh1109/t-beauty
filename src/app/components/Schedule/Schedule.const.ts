@@ -1,4 +1,6 @@
-const svgAppoiment = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+import { DayPilot } from "@daypilot/daypilot-lite-react";
+
+export const svgAppoiment = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M23.5219 3.60957H0.478073V22.3028H23.5219V3.60957Z" fill="#EDEDED"/>
 <path d="M21.1315 6.08606H2.86852V19.8741H21.1315V6.08606Z" fill="#FFBC52"/>
 <path d="M10.1833 9.44221H6.5498V12.9801H10.1833V9.44221Z" fill="#D1392A"/>
@@ -10,7 +12,22 @@ const svgAppoiment = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none
 <path d="M8.17528 11.1633H7.74502C7.48097 11.1633 7.26694 10.9493 7.26694 10.6852C7.26694 10.4212 7.48097 10.2072 7.74502 10.2072H8.17528C8.43933 10.2072 8.65336 10.4212 8.65336 10.6852C8.65341 10.9493 8.43933 11.1633 8.17528 11.1633Z" fill="black"/>
 </svg>
 `;
-export const EVENTS = [
+
+export type EventType = DayPilot.EventData & {
+  details?: string;
+};
+
+export const DEFAULT_EVENT: EventType = {
+  id: "",
+  text: "",
+  start: "",
+  end: "",
+  html: ``,
+  details: "",
+  barColor: "#d57a7a",
+};
+
+export const EVENTS: EventType[] = [
   {
     id: 1,
     text: "Confirm an appoiment",

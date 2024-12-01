@@ -3,17 +3,19 @@
 import React, { useState, useMemo, useCallback } from "react";
 import { DayPilot, DayPilotCalendar } from "@daypilot/daypilot-lite-react";
 import Modal from "../Modal/Modal";
-import { EVENTS } from "./Schedule.const";
+import { DEFAULT_EVENT, EVENTS, EventType } from "./Schedule.const";
 import { MdOutlineNavigateNext } from "react-icons/md";
-import { GrFormPrevious } from "react-icons/gr";
-import { formatDate } from "@/app/ultil/common";
-import { GrFormNextLink } from "react-icons/gr";
+import { GrFormPrevious, GrFormNextLink } from "react-icons/gr";
+import {
+  formatDate,
+  formatDateTime,
+  generateHTMLEvent,
+} from "@/app/ultil/common";
 
 const Schedule = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [itemSelected, setItemSelected] = useState<
-    DayPilot.EventData & { details: string }
-  >();
+  const [isOpenCreate, setIsOpenCreate] = useState(false);
+  const [formData, setFormData] = useState<EventType>(DEFAULT_EVENT);
+  const [events, setEvents] = useState<EventType[]>(EVENTS);
 
   const [currentWeek, setCurrentWeek] = useState(() => {
     const today = new Date();
@@ -58,21 +60,71 @@ const Schedule = () => {
   }, [currentWeek]);
 
   const onEventClick = useCallback((args: DayPilot.CalendarEventClickArgs) => {
-    setIsOpen(true);
-    setItemSelected(args.e.data);
+    setIsOpenCreate(true);
+    setFormData(args.e.data);
   }, []);
+
+  const handleCloseModalCreate = useCallback(() => {
+    setIsOpenCreate(false);
+    setFormData(DEFAULT_EVENT);
+  }, []);
+
+  const handleChangeFormData = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setFormData((pre) => ({
+        ...pre,
+        [e.target.name]: e.target.value,
+      }));
+    },
+    []
+  );
+
+  const onTimeRangeSelected = useCallback(
+    (args: DayPilot.CalendarTimeRangeSelectedArgs) => {
+      setIsOpenCreate(true);
+      setFormData((pre) => ({
+        ...pre,
+        start: args.start,
+        end: args.end,
+      }));
+    },
+    []
+  );
+
+  const handleCreateEvent = useCallback(() => {
+    if (formData.id) {
+      setEvents((pre) => {
+        const origin = [...pre];
+        const index = origin.findIndex((item) => +item.id === +formData.id);
+        origin[index] = {
+          ...formData,
+          html: generateHTMLEvent(formData),
+        };
+        return origin;
+      });
+    } else {
+      const newItem = {
+        ...formData,
+        html: generateHTMLEvent(formData),
+      };
+      setEvents((pre) => [...pre, newItem]);
+    }
+    setIsOpenCreate(false);
+  }, [formData]);
+
   const renderCalendar = useMemo(() => {
     return (
       <DayPilotCalendar
         viewType={"Week"}
         startDate={formatDate(currentWeek.start)}
         timeRangeSelectedHandling={"Enabled"}
-        events={EVENTS}
+        events={events}
         onEventClick={onEventClick}
         headerDateFormat="dd-MM-yyyy"
+        onTimeRangeSelected={onTimeRangeSelected}
       />
     );
-  }, [currentWeek.start, onEventClick]);
+  }, [currentWeek.start, events, onEventClick, onTimeRangeSelected]);
 
   return (
     <>
@@ -95,16 +147,66 @@ const Schedule = () => {
         </button>
       </div>
       {renderCalendar}
-      <Modal isOpen={isOpen} handleClose={(value) => setIsOpen(value)}>
+      <Modal
+        isOpen={isOpenCreate}
+        handleClose={(value) => {
+          setIsOpenCreate(value);
+          setFormData(DEFAULT_EVENT);
+        }}
+      >
         <div>
-          <h1
-            className="text-xl font-semibold"
-            style={{ color: itemSelected?.barColor }}
-          >
-            {itemSelected?.text}
+          <h1 className="text-xl font-semibold text-center">
+            {+formData.id > 0 ? "Edit event" : "Create new event"}
           </h1>
-          <div>
-            <p>{itemSelected?.details}</p>
+          <div className="mt-10 flex flex-col gap-2">
+            <div className="flex items-center gap-2 justify-between">
+              <span className="min-w-[120px] font-semibold">Time: </span>
+              <div className="flex-1 flex justify-end items-center gap-2 font-semibold text-red-600">
+                <span>{formatDateTime(formData.start.toString())}</span>
+                <GrFormNextLink fontSize={24} />
+                <span>{formatDateTime(formData.end.toString())}</span>
+              </div>
+            </div>
+            <div className="flex gap-4 items-center">
+              <label htmlFor="text" className="min-w-[120px] font-semibold">
+                Title:
+              </label>
+              <input
+                placeholder="Enter the title"
+                value={formData.text}
+                onChange={handleChangeFormData}
+                name="text"
+                id="text"
+                className="flex-1 px-4 py-2 rounded-xl border border-gray-500"
+              />
+            </div>
+            <div className="flex gap-4 items-center">
+              <label htmlFor="details" className="min-w-[120px] font-semibold">
+                Details:
+              </label>
+              <input
+                placeholder="Enter the detail"
+                value={formData.details}
+                onChange={handleChangeFormData}
+                name="details"
+                id="details"
+                className="flex-1 px-4 py-2 rounded-xl border border-gray-500"
+              />
+            </div>
+            <div className=" flex w-2/3 mx-auto gap-4 pt-12">
+              <button
+                onClick={handleCloseModalCreate}
+                className="flex-1 py-1.5 rounded-lg  flex items-center justify-center gap-1 text-red-400 border border-red-400 hover:bg-red-400 hover:text-white"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleCreateEvent}
+                className="flex-1 py-1.5 rounded-lg bg-green-500 flex items-center justify-center gap-1 text-white border hover:bg-green-700"
+              >
+                Create
+              </button>
+            </div>
           </div>
         </div>
       </Modal>

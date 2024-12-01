@@ -21,7 +21,7 @@ const Service = () => {
                   src={item.image}
                   alt={item.service}
                   fill
-                  style={{ objectFit: "cover" }}
+                  objectFit="cover"
                   className=" rounded-lg md:rounded-2xl"
                 />
               </div>
