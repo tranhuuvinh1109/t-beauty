@@ -30,7 +30,7 @@ const SliderContainer = () => {
                   alt={item.name}
                   fill
                   quality={100}
-                  style={{ objectFit: "cover" }}
+                  objectFit="cover"
                 />
               </div>
             </a>

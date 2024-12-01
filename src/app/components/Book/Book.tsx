@@ -45,9 +45,7 @@ const Book = () => {
                       src="/Logo.png"
                       fill={true}
                       alt={"Logo"}
-                      style={{
-                        objectFit: "cover",
-                      }}
+                      objectFit="cover"
                     />
                   </div>
                 </div>

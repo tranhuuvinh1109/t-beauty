@@ -1,4 +1,5 @@
 import { InvoiceType } from "@/app/api/invoice/invoice.type";
+import { EventType, svgAppoiment } from "../components/Schedule/Schedule.const";
 
 export const formatDate = (
   date: Date,
@@ -52,4 +53,8 @@ export const formatDateTime = (dateString?: string) => {
 export const getBasePath = (url: string) => {
   const match = url.match(/\/admin\/[^/]+/);
   return match ? match[0] : "/admin";
+};
+
+export const generateHTMLEvent = (data: EventType) => {
+  return `<div style="height: -webkit-fill-available; color: ${data.barColor};"><h1>${svgAppoiment} ${data.text}</h1><p>${data.details}</p></div>`;
 };
