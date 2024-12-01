@@ -38,4 +38,5 @@ export type SidebarItemType = {
   pathname: string;
   label: string;
   icon: IconType;
+  disabled: boolean;
 };

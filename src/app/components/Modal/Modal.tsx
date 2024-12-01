@@ -1,4 +1,5 @@
 import { Dialog, DialogPanel } from "@headlessui/react";
+import { IoIosClose } from "react-icons/io";
 
 type ModalProps = {
   isOpen: boolean;
@@ -17,8 +18,14 @@ const Modal = ({ isOpen, handleClose, children }: ModalProps) => {
         <div className="flex min-h-full items-center justify-center p-4">
           <DialogPanel
             transition
-            className="w-full max-w-md rounded-xl bg-gold-hover/45 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            className="w-full max-w-[700px] rounded-xl relative bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
           >
+            <button
+              onClick={() => handleClose(false)}
+              className=" absolute top-1.5 right-1.5 p-1 hover:bg-slate-400/40 rounded-full"
+            >
+              <IoIosClose fontSize={24} />
+            </button>
             {children}
           </DialogPanel>
         </div>

@@ -1,17 +1,4 @@
 import { HeaderAdmin, Sidebar } from "../components";
-// import { Edu_AU_VIC_WA_NT_Hand, Barlow } from "next/font/google";
-
-// const Edu = Edu_AU_VIC_WA_NT_Hand({
-//   weight: ["400", "500", "600", "700"],
-//   subsets: ["latin"],
-//   variable: "--font-dancing",
-// });
-
-// const Bar = Barlow({
-//   weight: ["400", "500", "600", "700"],
-//   subsets: ["latin"],
-//   variable: "--font-bar",
-// });
 
 export default function AdminLayout({
   children,
@@ -20,11 +7,12 @@ export default function AdminLayout({
 }>) {
   return (
     <div className={` antialiased text-text-black bg-white relative`}>
-      <div className="grid grid-rows-[80px_1fr] grid-cols-[300px_1fr] h-screen font-[family-name:var(--font-bar)]">
+      <div className="grid grid-rows-[60px_1fr] grid-cols-[300px_1fr] h-screen font-[family-name:var(--font-bar)]">
         <Sidebar />
         <HeaderAdmin />
-
-        <main className=" bg-gray-100/80 p-6 overflow-auto">{children}</main>
+        <main className="relative bg-gray-2 00/80 px-6 py-2 overflow-auto">
+          {children}
+        </main>
       </div>
     </div>
   );
