@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { SIDE_BAR } from "@/app/constanst";
+import { getBasePath } from "@/app/ultil/common";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -24,11 +25,16 @@ const Sidebar = () => {
           {SIDE_BAR.map((item, index) => {
             const Icon = item.icon;
             return (
-              <li key={index}>
+              <li
+                key={index}
+                className={
+                  item.disabled ? "pointer-events-none" : "pointer-events-auto"
+                }
+              >
                 <Link
                   href={item.pathname}
                   className={`flex gap-2 items-center py-2 px-4 rounded hover:bg-gray-700 ${
-                    pathname === item.pathname
+                    getBasePath(pathname) === item.pathname
                       ? "bg-gray-700 font-semibold"
                       : ""
                   }`}
