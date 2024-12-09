@@ -13,6 +13,7 @@ import { default as Schedule } from "./Schedule/Schedule";
 import { default as HeaderAdmin } from "./HeaderAdmin/HeaderAdmin";
 import { default as Modal } from "./Modal/Modal";
 import { default as InvoiceTable } from "./Invoice/Invoice";
+import { default as CustomerTable } from "./CustomerTable/CustomerTable";
 
 export {
   Container,
@@ -30,4 +31,5 @@ export {
   Schedule,
   Modal,
   InvoiceTable,
+  CustomerTable,
 };

@@ -40,3 +40,10 @@ export type SidebarItemType = {
   icon: IconType;
   disabled: boolean;
 };
+
+export type ServiceType = {
+  name: string;
+  price: number;
+  description: string;
+  image?: string;
+};

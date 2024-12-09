@@ -32,6 +32,8 @@ export const INVOICES: InvoiceType[] = [
       name: "John Doe",
       email: "johndoe@gmail.com",
       phone: "09123456789",
+      image:
+        "https://preview.keenthemes.com/metronic8/demo43/assets/media/avatars/300-1.jpg",
       address: "123 Main St, City, Country",
       dateOfBirth: "1990-05-20",
       createdAt: "2024-01-01T08:00:00Z",
@@ -73,6 +75,8 @@ export const INVOICES: InvoiceType[] = [
       email: "alicesmith@gmail.com",
       phone: "09876543210",
       address: "456 Elm St, City, Country",
+      image:
+        "https://preview.keenthemes.com/metronic8/demo43/assets/media/avatars/300-1.jpg",
       dateOfBirth: "1985-09-15",
       createdAt: "2024-01-02T08:00:00Z",
       updatedAt: "2024-01-02T08:30:00Z",
@@ -113,6 +117,8 @@ export const INVOICES: InvoiceType[] = [
       email: "bobjohnson@gmail.com",
       phone: "09123456780",
       address: "789 Oak St, City, Country",
+      image:
+        "https://preview.keenthemes.com/metronic8/demo43/assets/media/avatars/300-1.jpg",
       dateOfBirth: "1982-11-30",
       createdAt: "2024-01-03T08:00:00Z",
       updatedAt: "2024-01-03T08:30:00Z",
@@ -153,6 +159,8 @@ export const INVOICES: InvoiceType[] = [
       email: "charliebrown@gmail.com",
       phone: "09123456781",
       address: "101 Pine St, City, Country",
+      image:
+        "https://preview.keenthemes.com/metronic8/demo43/assets/media/avatars/300-1.jpg",
       dateOfBirth: "1993-02-10",
       createdAt: "2024-01-04T08:00:00Z",
       updatedAt: "2024-01-04T08:30:00Z",
@@ -193,6 +201,8 @@ export const INVOICES: InvoiceType[] = [
       email: "davidwhite@gmail.com",
       phone: "09123456782",
       address: "202 Maple St, City, Country",
+      image:
+        "https://preview.keenthemes.com/metronic8/demo43/assets/media/avatars/300-1.jpg",
       dateOfBirth: "1980-03-25",
       createdAt: "2024-01-05T08:00:00Z",
       updatedAt: "2024-01-05T08:30:00Z",

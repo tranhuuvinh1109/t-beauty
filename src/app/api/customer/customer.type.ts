@@ -4,6 +4,7 @@ export type CustomerType = {
   phone: string;
   email: string;
   address: string;
+  image?: string;
   dateOfBirth: string;
   createdAt?: string;
   updatedAt?: string;

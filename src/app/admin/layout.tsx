@@ -10,7 +10,7 @@ export default function AdminLayout({
       <div className="grid grid-rows-[60px_1fr] grid-cols-[300px_1fr] h-screen font-[family-name:var(--font-bar)]">
         <Sidebar />
         <HeaderAdmin />
-        <main className="relative bg-gray-2 00/80 px-6 py-2 overflow-auto">
+        <main className="relative bg-gray-200/80 px-6 py-2 overflow-auto">
           {children}
         </main>
       </div>

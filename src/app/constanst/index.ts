@@ -46,50 +46,35 @@ export const MENU_HEADER: NavItemType[] = [
 
 export const SERVICE: ServiceItemType[] = [
   {
-    image: "/images/phun-moi.jpg",
-    service: "Lip tattooing service",
+    image: "/images/service-item1.jpg",
+    service: "",
     href: "",
   },
   {
-    image: "/images/phun-may.webp",
-    service: "Eyebrow tattooing service",
+    image: "/images/service-item2.jpg",
+    service: "",
     href: "",
   },
   {
-    image: "/images/phun-mi-mat.jpg",
-    service: "Eyeliner tattooing service",
-    href: "",
-  },
-  {
-    image: "/images/phun-moi.jpg",
-    service: "Lip tattooing service",
-    href: "",
-  },
-  {
-    image: "/images/phun-may.webp",
-    service: "Eyebrow tattooing service",
-    href: "",
-  },
-  {
-    image: "/images/phun-mi-mat.jpg",
-    service: "Eyeliner tattooing service",
+    image: "/images/service-item3.jpg",
+    service: "",
     href: "",
   },
 ];
 
 export const SLIDERS: SliderItemType[] = [
-  {
-    href: "/images/banner-top-cong-nghe-pc.webp",
-    name: "banner-top-cong-nghe-pc",
-  },
-  {
-    href: "/images/banner-599-pc.webp",
-    name: "banner-599-pc",
-  },
-  {
-    href: "/images/10.09_BANNER-PR-DOI-NGU-BAC-SI-VTM-DIVA-02.webp",
-    name: "10.09_BANNER-PR-DOI-NGU-BAC-SI-VTM-DIVA-02",
-  },
+  // {
+  //   href: "/images/banner-top-cong-nghe-pc.webp",
+  //   name: "banner-top-cong-nghe-pc",
+  // },
+  // {
+  //   href: "/images/banner-599-pc.webp",
+  //   name: "banner-599-pc",
+  // },
+  // {
+  //   href: "/images/10.09_BANNER-PR-DOI-NGU-BAC-SI-VTM-DIVA-02.webp",
+  //   name: "10.09_BANNER-PR-DOI-NGU-BAC-SI-VTM-DIVA-02",
+  // },
   {
     href: "/images/Desktop.jpg",
     name: "Desktop",
@@ -252,7 +237,7 @@ export const SIDE_BAR: SidebarItemType[] = [
     label: "Customer",
     pathname: "/admin/customer",
     icon: VscAccount,
-    disabled: true,
+    disabled: false,
   },
   {
     label: "Setting",

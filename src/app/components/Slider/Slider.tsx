@@ -24,13 +24,13 @@ const SliderContainer = () => {
         {SLIDERS.map((item, index) => {
           return (
             <a key={index}>
-              <div className="w-full h-[450px] md:h-[500px] relative">
+              <div className="w-full h-[250px] md:h-[500px] relative">
                 <Image
                   src={item.href}
                   alt={item.name}
                   fill
                   quality={100}
-                  objectFit="cover"
+                  objectFit="container"
                 />
               </div>
             </a>
