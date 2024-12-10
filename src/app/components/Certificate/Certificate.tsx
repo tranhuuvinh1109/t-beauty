@@ -40,7 +40,7 @@ const Certificate = () => {
 
           <div className="w-full h-[268px]  relative col-span-2 rounded-lg overflow-hidden">
             <Image
-              src="/images/Desktop.jpg"
+              src="/images/banner1.jpg"
               alt="beauty"
               fill
               quality={100}
@@ -82,7 +82,7 @@ const Certificate = () => {
           </Carousel>
           <div className="w-full h-[268px]  relative col-span-2 rounded-lg overflow-hidden">
             <Image
-              src="/images/Mobile.jpg"
+              src="/images/banner1.jpg"
               alt="beauty"
               fill
               quality={100}

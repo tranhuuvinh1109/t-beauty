@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 
 import { IoMdCall } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import Container from "../Container/Container";
+import DatePicker from "react-datepicker";
 
 const Award = () => {
   return (
@@ -69,7 +71,7 @@ const Award = () => {
           </div>
           <div className="col-span-1  rounded-xl text-center text-white">
             <div className="flex flex-col gap-2">
-              <h3 className="text-xl font-semibold">Register now</h3>
+              <h3 className="text-xl font-semibold">Make an appointment</h3>
               <h1 className="text-4xl font-semibold uppercase">Instant gift</h1>
               <h5>Please fill in your information to receive consultation</h5>
             </div>
@@ -81,6 +83,12 @@ const Award = () => {
               <input
                 placeholder="Phone number"
                 className="px-4 py-2 rounded-full border border-gold"
+              />
+              <DatePicker
+                showTimeSelect
+                selected={new Date()}
+                timeFormat="HH:mm"
+                className="col-span-3 px-4 py-2 rounded-full "
               />
               <button
                 type="submit"

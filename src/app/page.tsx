@@ -1,6 +1,5 @@
 import {
   Award,
-  Book,
   Certificate,
   Footer,
   Header,
@@ -18,7 +17,6 @@ export default function Home() {
         <Service />
         <Certificate />
         <Award />
-        <Book />
         <InfiniteScroll />
       </div>
       <Footer />
