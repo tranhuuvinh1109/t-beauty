@@ -44,55 +44,39 @@ export const MENU_HEADER: NavItemType[] = [
   },
 ];
 
-export const SERVICE: ServiceItemType[] = [
+export const SERVICE_DESKTOP: ServiceItemType[] = [
   {
-    image: "/images/phun-moi.jpg",
-    service: "Lip tattooing service",
+    image: "/images/ChemicalPeels-desktop.png",
+    service: "Chemical Peels",
     href: "",
   },
   {
-    image: "/images/phun-may.webp",
-    service: "Eyebrow tattooing service",
+    image: "/images/FacialSkincare-desktop.png",
+    service: "Facial Skincare",
     href: "",
   },
   {
-    image: "/images/phun-mi-mat.jpg",
-    service: "Eyeliner tattooing service",
-    href: "",
-  },
-  {
-    image: "/images/phun-moi.jpg",
-    service: "Lip tattooing service",
-    href: "",
-  },
-  {
-    image: "/images/phun-may.webp",
-    service: "Eyebrow tattooing service",
-    href: "",
-  },
-  {
-    image: "/images/phun-mi-mat.jpg",
-    service: "Eyeliner tattooing service",
+    image: "/images/HairRemoval-desktop.png",
+    service: "Hair Removal",
     href: "",
   },
 ];
 
-export const SLIDERS: SliderItemType[] = [
+export const SLIDERS_MOBILE: SliderItemType[] = [
   {
-    href: "/images/banner-top-cong-nghe-pc.webp",
-    name: "banner-top-cong-nghe-pc",
+    href: "/images/banner1-mobile.png",
+    name: "banner1",
   },
   {
-    href: "/images/banner-599-pc.webp",
-    name: "banner-599-pc",
+    href: "/images/banner2-mobile.png",
+    name: "banner2",
   },
+];
+
+export const SLIDERS_DESKTOP: SliderItemType[] = [
   {
-    href: "/images/10.09_BANNER-PR-DOI-NGU-BAC-SI-VTM-DIVA-02.webp",
-    name: "10.09_BANNER-PR-DOI-NGU-BAC-SI-VTM-DIVA-02",
-  },
-  {
-    href: "/images/Desktop.jpg",
-    name: "Desktop",
+    href: "/images/banner1.jpg",
+    name: "banner1",
   },
   {
     href: "/images/PosterTreo.jpg",
