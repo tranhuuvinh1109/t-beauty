@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 import { Dancing_Script, Barlow } from "next/font/google";
+import QueryProvider from "./provider/QueryProvider";
 
 const Bar = Barlow({
   weight: ["400", "500", "600", "700"],
@@ -41,6 +42,9 @@ export const metadata: Metadata = {
     "anti-aging treatments",
     "professional beauty care",
     "luxury beauty clinic",
+    "408 646 6147",
+    "2114 Senter Rd Ste 12 San Jose, CA 95112",
+    "tbeautycenterskin@gmail.com",
   ],
   icons: {
     icon: [
@@ -66,7 +70,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -77,7 +80,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${Dancing.variable} ${Bar.variable} antialiased text-text-black bg-white relative`}
       >
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

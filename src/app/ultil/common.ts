@@ -1,5 +1,8 @@
 import { InvoiceType } from "@/app/api/invoice/invoice.type";
 import { EventType, svgAppoiment } from "../components/Schedule/Schedule.const";
+import { ScheduleFormType } from "../components/Award/Award.type";
+import { SCHEDULE_COLOR_TYPE } from "../enum/common";
+import { ScheduleItemType } from "../api/schedule/schedule.type";
 
 export const formatDate = (
   date: Date,
@@ -35,10 +38,13 @@ export const calculatorAmount = (invoice: InvoiceType) => {
   return (total * (100 - Number(invoice.discount))) / 100;
 };
 
-export const formatDateTime = (dateString?: string) => {
-  if (!dateString) return "-";
+export const formatDateTime = (dateInput?: string | Date) => {
+  if (!dateInput) return "-";
 
-  const date = new Date(dateString);
+  if (!dateInput) return "-";
+
+  // Use the Date instance directly or parse if it's a string
+  const date = typeof dateInput === "string" ? new Date(dateInput) : dateInput;
 
   const hours = date.getHours().toString().padStart(2, "0");
   const minutes = date.getMinutes().toString().padStart(2, "0");
@@ -57,4 +63,52 @@ export const getBasePath = (url: string) => {
 
 export const generateHTMLEvent = (data: EventType) => {
   return `<div style="height: -webkit-fill-available; color: ${data.barColor};"><h1>${svgAppoiment} ${data.text}</h1><p>${data.details}</p></div>`;
+};
+
+export const generateHTMLEventFromMakeAppoiment = (data: ScheduleFormType) => {
+  return `<div style="height: -webkit-fill-available; color: ${
+    SCHEDULE_COLOR_TYPE.APPOIMENT
+  };"><h1>${svgAppoiment} Confirm with customer</h1><h6>Name: ${
+    data.name
+  }</h6><h6>Phone: ${data.phone}</h6><h5 style="color: ${
+    SCHEDULE_COLOR_TYPE.APPOIMENT
+  };">Time: ${formatDateTime(data.time)}</h5>
+  </div>`;
+};
+
+export const convertTime = (dateString: string) => {
+  const date = new Date(dateString);
+
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Months are zero-based
+  const day = date.getDate().toString().padStart(2, "0");
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
+  const seconds = date.getSeconds().toString().padStart(2, "0");
+
+  return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+};
+
+export const generateStartEndTime = (start: string) => {
+  const startTime = new Date(start);
+
+  const endTime = new Date(startTime.getTime() + 4 * 60 * 60 * 1000);
+
+  return {
+    start: convertTime(startTime.toISOString()),
+    end: convertTime(endTime.toISOString()),
+  };
+};
+
+export const convertScheduleToEvent = (input: ScheduleItemType[]) => {
+  const result: EventType[] = input.map((schedule) => ({
+    id: schedule.id || "",
+    text: schedule.name,
+    start: convertTime(schedule.start),
+    end: convertTime(schedule.end),
+    html: schedule.html,
+    details: schedule.details,
+    barColor: schedule.bar_color,
+  }));
+  return result;
 };

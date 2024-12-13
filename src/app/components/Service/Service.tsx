@@ -20,7 +20,7 @@ const Service = () => {
                 <Image
                   src={item.image}
                   alt={item.service}
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                   className=" rounded-lg md:rounded-2xl"
                   width={500}
                   height={300}
