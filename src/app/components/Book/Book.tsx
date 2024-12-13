@@ -3,9 +3,6 @@ import { AiOutlineSchedule } from "react-icons/ai";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { useState } from "react";
 import Image from "next/image";
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
 
 const Book = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,12 +93,6 @@ const Book = () => {
                     >
                       Date
                     </label>
-                    <DatePicker
-                      showTimeSelect
-                      selected={new Date()}
-                      timeFormat="HH:mm"
-                      className="col-span-3 px-4 py-2 rounded-full "
-                    />
                   </div>
                   <button className="bg-gold py-2 rounded-full text-white font-semibold hover:opacity-80">
                     Submit

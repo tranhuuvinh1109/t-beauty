@@ -31,7 +31,7 @@ const SliderContainer = () => {
                     alt={item.name}
                     fill
                     quality={100}
-                    objectFit="cover"
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
               </a>
@@ -63,7 +63,7 @@ const SliderContainer = () => {
                     width={400}
                     height={300}
                     quality={100}
-                    objectFit="contain"
+                    style={{ objectFit: "contain" }}
                   />
                 </div>
               </a>

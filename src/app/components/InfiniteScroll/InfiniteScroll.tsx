@@ -40,7 +40,7 @@ const InfiniteScroll = () => {
         alt="background"
         fill
         className="z-0"
-        objectFit="cover"
+        style={{ objectFit: "cover" }}
       />
       <div className="absolute flex justify-center items-center top-0 bottom-0 right-0 left-0 z-20	">
         <div
@@ -57,7 +57,7 @@ const InfiniteScroll = () => {
                     alt={item.name}
                     fill
                     className="z-10"
-                    objectFit="cover"
+                    style={{ objectFit: "cover" }}
                   />
                 </li>
               );

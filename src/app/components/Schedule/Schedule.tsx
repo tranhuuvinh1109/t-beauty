@@ -1,21 +1,25 @@
 "use client";
 
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import { DayPilot, DayPilotCalendar } from "@daypilot/daypilot-lite-react";
 import Modal from "../Modal/Modal";
-import { DEFAULT_EVENT, EVENTS, EventType } from "./Schedule.const";
+import { DEFAULT_EVENT, EventType } from "./Schedule.const";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious, GrFormNextLink } from "react-icons/gr";
 import {
+  convertScheduleToEvent,
   formatDate,
   formatDateTime,
   generateHTMLEvent,
 } from "@/app/ultil/common";
+import { useGetAllSchedule } from "@/app/api/schedule";
+import Loading from "../Loading/Loading";
 
 const Schedule = () => {
   const [isOpenCreate, setIsOpenCreate] = useState(false);
   const [formData, setFormData] = useState<EventType>(DEFAULT_EVENT);
-  const [events, setEvents] = useState<EventType[]>(EVENTS);
+  const [events, setEvents] = useState<EventType[]>([]);
+  const { data, isPending } = useGetAllSchedule();
 
   const [currentWeek, setCurrentWeek] = useState(() => {
     const today = new Date();
@@ -61,6 +65,7 @@ const Schedule = () => {
 
   const onEventClick = useCallback((args: DayPilot.CalendarEventClickArgs) => {
     setIsOpenCreate(true);
+    console.log("111", args.e.data);
     setFormData(args.e.data);
   }, []);
 
@@ -126,6 +131,12 @@ const Schedule = () => {
     );
   }, [currentWeek.start, events, onEventClick, onTimeRangeSelected]);
 
+  useEffect(() => {
+    if (events.length === 0 && data) {
+      setEvents(convertScheduleToEvent(data));
+    }
+  }, [data, events.length]);
+
   return (
     <>
       <div className=" flex justify-end items-center gap-6 mb-2">
@@ -156,7 +167,7 @@ const Schedule = () => {
       >
         <div>
           <h1 className="text-xl font-semibold text-center">
-            {+formData.id > 0 ? "Edit event" : "Create new event"}
+            {formData.id ? "Edit event" : "Create new event"}
           </h1>
           <div className="mt-10 flex flex-col gap-2">
             <div className="flex items-center gap-2 justify-between">
@@ -210,6 +221,7 @@ const Schedule = () => {
           </div>
         </div>
       </Modal>
+      <Loading isLoading={isPending} />
     </>
   );
 };
