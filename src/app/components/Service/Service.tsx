@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Animation from "../Animation/Animation";
 import { SERVICE_DESKTOP } from "@/app/constanst";
 import Link from "next/link";
+import { Container } from "..";
 
 const Service = () => {
   return (
-    <Animation animateIn="fadeIn" animateOut="fadeOut">
+    <Container>
       <h5 className="text-center text-text-primary text-3xl font-semibold my-6">
         Featured services
       </h5>
@@ -38,7 +38,7 @@ const Service = () => {
           );
         })}
       </div>
-    </Animation>
+    </Container>
   );
 };
 

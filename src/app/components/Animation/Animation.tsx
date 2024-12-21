@@ -1,27 +1,21 @@
-"use client";
-import ScrollAnimation from "react-animate-on-scroll";
-import "animate.css/animate.compat.css";
-import Container from "../Container/Container";
-import React from "react";
+import { motion } from "framer-motion";
 
 type AnimationProps = {
   children: React.ReactNode;
-  animateIn?: "bounceInRight" | "fadeIn" | "bounceInLeft";
-  animateOut?: "bounceOutLeft" | "fadeOut" | "bounceOutRight";
   className?: string;
 };
-const Animation = ({
-  children,
-  animateIn = "bounceInRight",
-  animateOut = "bounceOutLeft",
-  className,
-}: AnimationProps) => {
+
+const Animation = ({ children, className }: AnimationProps) => {
   return (
-    <Container className={className}>
-      <ScrollAnimation animateIn={animateIn} animateOut={animateOut}>
-        {children}
-      </ScrollAnimation>
-    </Container>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 };
 

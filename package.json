@@ -9,27 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@daypilot/daypilot-lite-javascript": "^3.30.0",
-    "@daypilot/daypilot-lite-react": "^3.30.0",
+    "@daypilot/daypilot-lite-javascript": "^3.31.0",
+    "@daypilot/daypilot-lite-react": "^3.31.0",
     "@headlessui/react": "^2.2.0",
     "@tanstack/react-query": "^5.62.7",
     "animate.css": "^4.1.1",
     "axios": "^1.7.9",
+    "framer-motion": "^11.15.0",
     "gapi-script": "^1.2.0",
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
-    "react-animate-on-scroll": "^2.1.9",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
-    "react-icons": "^5.3.0",
+    "react-icons": "^5.4.0",
     "react-responsive-carousel": "^3.2.23",
-    "react-toastify": "^10.0.6",
-    "rsuite": "^5.75.0"
+    "react-toastify": "^11.0.2",
+    "rsuite": "^5.76.0"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.62.1",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-animate-on-scroll": "^2.1.8",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "15.0.2",

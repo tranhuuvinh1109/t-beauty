@@ -3,11 +3,11 @@ import { COLOR } from "@/app/enum/common";
 import { CERTIFICATES } from "@/app/constanst";
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-import Animation from "../Animation/Animation";
+import { Container } from "..";
 
 const Certificate = () => {
   return (
-    <Animation className="mt-10" animateIn="fadeIn" animateOut="fadeOut">
+    <Container>
       <div>
         <h1 className="md:text-xl text-base text-center font-medium">
           Reasons Why Customers Choose{" "}
@@ -91,7 +91,7 @@ const Certificate = () => {
           </div>
         </div>
       </div>
-    </Animation>
+    </Container>
   );
 };
 
