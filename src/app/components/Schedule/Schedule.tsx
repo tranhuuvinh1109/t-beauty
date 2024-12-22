@@ -62,7 +62,6 @@ const Schedule = () => {
 
   const onEventClick = useCallback((args: DayPilot.CalendarEventClickArgs) => {
     setIsOpenCreate(true);
-    console.log("111", args.e.data);
     setFormData(args.e.data);
   }, []);
 

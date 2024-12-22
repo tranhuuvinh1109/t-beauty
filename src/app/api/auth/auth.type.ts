@@ -28,3 +28,8 @@ export type SignInResponseAPIType = ResponseAPIType<{
   };
   message: string;
 }>;
+
+export type GetMyProfileResponseAPIType = ResponseAPIType<{
+  data: UserType;
+  success: boolean;
+}>;

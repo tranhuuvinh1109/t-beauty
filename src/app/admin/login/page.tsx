@@ -2,6 +2,7 @@
 
 import { useSignIn } from "@/app/api/auth";
 import { Loading } from "@/app/components";
+import { LOCALSTORAGE_KEY } from "@/app/enum/common";
 import { useAuth } from "@/app/provider/AppProvider";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -9,7 +10,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const LoginPage = () => {
-  const { setIsUserEmpty, isUserEmpty, setUser } = useAuth();
+  const { setIsUserEmpty, isUserEmpty, setUser, user } = useAuth();
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -44,18 +45,23 @@ const LoginPage = () => {
   }, [isUserEmpty, setIsUserEmpty]);
 
   useEffect(() => {
+    if (user) {
+      router.push("/admin");
+      return;
+    }
     if (error) {
       toast.error("Email or password incorrect. Please try again");
       return;
     }
     if (data) {
       setUser(data.user);
-      localStorage.setItem("access_token", data.accessToken);
-      localStorage.setItem("refresh_token", data.refreshToken);
+      localStorage.setItem(LOCALSTORAGE_KEY.ACCESS_TOKEN, data.accessToken);
+      localStorage.setItem(LOCALSTORAGE_KEY.REFRESH_TOKEN, data.refreshToken);
       toast.success("Login successful");
       router.push("/admin");
+      return;
     }
-  }, [data, setUser, router, error]);
+  }, [data, setUser, router, error, user]);
 
   return (
     <>

@@ -8,7 +8,6 @@ const Book = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {
     setIsOpen(true);
-    console.log("1");
   };
   const handleClose = () => setIsOpen(false);
 

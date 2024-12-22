@@ -1,6 +1,6 @@
 "use client";
 import { UserType } from "@/app/api/auth/auth.type";
-import { Modal } from "@/app/components";
+import { Loading, Modal } from "@/app/components";
 import { useRouter } from "next/navigation";
 import { TiWarningOutline } from "react-icons/ti";
 import {
@@ -11,6 +11,8 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useGetMyProfile } from "@/app/api/auth";
+import { toast } from "react-toastify";
 
 type AppProviderType = {
   user?: UserType;
@@ -31,8 +33,10 @@ const AppProvider = ({ children }: { children: JSX.Element }) => {
   const [isUserEmpty, setIsUserEmpty] = useState(false);
   const router = useRouter();
 
+  const { mutate, data, error, isPending } = useGetMyProfile();
+
   const handleClose = () => {
-    setIsUserEmpty(false);
+    // setIsUserEmpty(false);
   };
 
   const handleClick = () => {
@@ -40,10 +44,28 @@ const AppProvider = ({ children }: { children: JSX.Element }) => {
   };
 
   useEffect(() => {
-    if (!user) {
-      setIsUserEmpty(true);
+    if (error) {
+      toast.error("Error getting user information");
+      return;
     }
-  }, [user]);
+    if (data) {
+      setUser(data);
+      // setIsUserEmpty(false);
+      return;
+    }
+  }, [data, error]);
+
+  useEffect(() => {
+    if (!user) {
+      // setIsUserEmpty(true);
+      const accessToken = localStorage.getItem("access_token");
+      if (accessToken) {
+        mutate();
+      }
+      return;
+    }
+    setIsUserEmpty(false);
+  }, [mutate, user]);
 
   return (
     <APP_CONTEXT.Provider
@@ -69,6 +91,7 @@ const AppProvider = ({ children }: { children: JSX.Element }) => {
         </div>
       </Modal>
       {children}
+      <Loading isLoading={isPending} />
     </APP_CONTEXT.Provider>
   );
 };
