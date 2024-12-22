@@ -5,14 +5,22 @@ type ModalProps = {
   isOpen: boolean;
   handleClose: (value: boolean) => void;
   children: React.ReactNode;
+  isHaveClose?: boolean;
 };
-const Modal = ({ isOpen, handleClose, children }: ModalProps) => {
+const Modal = ({
+  isOpen,
+  handleClose,
+  children,
+  isHaveClose = true,
+}: ModalProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleCloseModal = isHaveClose ? handleClose : (_: boolean) => {};
   return (
     <Dialog
       open={isOpen}
       as="div"
       className="relative z-50 focus:outline-none "
-      onClose={handleClose}
+      onClose={handleCloseModal}
     >
       <div className="fixed inset-0 z-50 w-screen overflow-y-auto bg-black/45">
         <div className="flex min-h-full items-center justify-center p-4">
@@ -20,12 +28,15 @@ const Modal = ({ isOpen, handleClose, children }: ModalProps) => {
             transition
             className="w-full max-w-[700px] rounded-xl relative bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
           >
-            <button
-              onClick={() => handleClose(false)}
-              className=" absolute top-1.5 right-1.5 p-1 hover:bg-slate-400/40 rounded-full"
-            >
-              <IoIosClose fontSize={24} />
-            </button>
+            {isHaveClose && (
+              <button
+                onClick={() => handleClose(false)}
+                className=" absolute top-1.5 right-1.5 p-1 hover:bg-slate-400/40 rounded-full"
+              >
+                <IoIosClose fontSize={24} />
+              </button>
+            )}
+
             {children}
           </DialogPanel>
         </div>
