@@ -1,68 +1,10 @@
-"use client";
 import Image from "next/image";
 
 import { IoMdCall } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import Container from "../Container/Container";
-import { DatePicker } from "rsuite";
-import { useCreateSchedule } from "@/app/api/schedule";
-import { ChangeEvent, useState } from "react";
-import { DEFAULT_SCHEDULE, DEFAULT_SCHEDULE_INFORMATION } from "./Award.const";
-import { ScheduleFormType } from "./Award.type";
-import {
-  generateHTMLEventFromMakeAppoiment,
-  generateStartEndTime,
-} from "@/app/ultil/common";
-import { toast } from "react-toastify";
-import Loading from "../Loading/Loading";
 
 const Award = () => {
-  const [scheduleInfo, setScheduleInfo] = useState<ScheduleFormType>(
-    DEFAULT_SCHEDULE_INFORMATION
-  );
-
-  const { mutate, isPending } = useCreateSchedule();
-
-  const handleSubmit = () => {
-    if (!scheduleInfo.name || !scheduleInfo.phone) {
-      toast.error("Please enter your name and phone number");
-      return;
-    }
-    const { start, end } = generateStartEndTime(
-      scheduleInfo.time.toISOString()
-    );
-
-    mutate(
-      {
-        data: {
-          ...DEFAULT_SCHEDULE,
-          html: generateHTMLEventFromMakeAppoiment(scheduleInfo),
-          start,
-          end,
-          details: JSON.stringify({
-            customerName: scheduleInfo.name,
-            customerPhone: scheduleInfo.phone,
-            time: scheduleInfo.time,
-          }),
-        },
-      },
-      {
-        onSuccess: () => {
-          toast.success(
-            "Thank you for making an appointment. Our staff will call you back as soon as possible."
-          );
-        },
-      }
-    );
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setScheduleInfo((pre) => ({
-      ...pre,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
     <>
       <div className="relative min-h-[640px] md:min-h-[500px] mt-10">
@@ -132,50 +74,21 @@ const Award = () => {
                 <h1 className="text-4xl font-semibold uppercase">
                   Instant gift
                 </h1>
-                <h5>Please fill in your information to receive consultation</h5>
               </div>
-              <div
-                className="flex flex-col gap-6 px-10 mt-6 text-gold"
-                // onSubmit={handleSubmit}
-              >
-                <input
-                  placeholder="Name"
-                  className="px-4 py-2 rounded-full border border-gold"
-                  name="name"
-                  value={scheduleInfo.name}
-                  onChange={handleChange}
-                />
-                <input
-                  placeholder="Phone number"
-                  className="px-4 py-2 rounded-full border border-gold"
-                  name="phone"
-                  value={scheduleInfo.phone}
-                  onChange={handleChange}
-                />
-                <DatePicker
-                  format="yyyy-MM-dd HH:mm"
-                  editable={false}
-                  value={scheduleInfo.time}
-                  menuStyle={{ zIndex: 10000 }}
-                  onChange={(value) => {
-                    setScheduleInfo((pre) => ({
-                      ...pre,
-                      time: value ? value : pre.time,
-                    }));
-                  }}
-                />
-                <button
-                  onClick={handleSubmit}
+              <div className="flex flex-col gap-6 px-10 mt-6 text-gold">
+                <a
+                  href="https://salonxpress.app/oNChZrOxQ8Q1Wn7ytkYG"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-10 py-2 bg-white w-fit mx-auto rounded-full font-semibold hover:bg-gold-hover hover:text-white"
                 >
-                  Submit
-                </button>
+                  Booking now
+                </a>
               </div>
             </div>
           </Container>
         </div>
       </div>
-      <Loading isLoading={isPending} />
     </>
   );
 };
